@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Welcome to Jamstack!</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../src/styles/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-center">
+        <span class="navbar-brand">
+            Welcome to Jamstack!
+        </span>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div id="netlify" class="col-12 col-md-8 col-lg-6">
+                <div class="card">
+                    <img src="https://media.giphy.com/media/3ogwFX9sL9SgVVw1mU/giphy.gif" class="card-img-top" alt="Excitement">
+                    <div class="card-body">
+                        <h5 class="card-title">YOU DID IT!</h5>
+                        <p class="card-text">The supreme intelligence in this page detects you deployed it on Netlify, great success! 🎉</p>
+                    </div>
+                </div>
+            </div>
+            <div id="local" class="col-12 col-md-8 col-lg-6">
+                <div class="card">
+                    <img src="https://media.giphy.com/media/LnKa2WLkd6eAM/giphy.gif" class="card-img-top" alt="Awaiting">
+                    <div class="card-body">
+                        <h5 class="card-title">Not quite there yet...</h5>
+                        <p class="card-text">It seems like you are running this page locally. Follow the steps below to deploy it on Netlify.</p>
+                    </div>
+                    <ol class="list-group list-group-flush">
+                        <li class="list-group-item">1. Head over to <a href="https://app.netlify.com/signup">app.netlify.com/signup</a></li>
+                        <li class="list-group-item">2. Sign up with the platform where this repository is located</li>
+                        <li class="list-group-item">3. Press the <a href="https://app.netlify.com/start">New site from Git</a> button</li>
+                        <li class="list-group-item">4. </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        if(window.location.protocol === "file:" || window.location.hostname === "localhost") {
+            document.getElementById("local").style.display = "block";
+        } else if(window.location.hostname.includes("netlify.com")) {
+            document.getElementById("netlify").style.display = "block";
+        }
+    </script>
+</body>
+</html>

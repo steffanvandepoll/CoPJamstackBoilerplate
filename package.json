@@ -1,0 +1,15 @@
+{
+  "name": "cop-jamstack-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for Jamstack code (Netlify, 11ty & Contentful) for the Webapps community of practice",
+  "scripts": {
+    "eleventy": "npx eleventy --serve",
+    "data": "node sourceData"
+  },
+  "author": "Gabriël Moawad",
+  "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "nunjucks-includeData": "0.0.9",
+    "contentful": "^7.14.0"
+  }
+}

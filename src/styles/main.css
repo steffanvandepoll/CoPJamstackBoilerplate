@@ -1,0 +1,8 @@
+.row {
+    margin: 2rem 0;
+}
+
+#local,
+#netlify {
+    display: none;
+}
