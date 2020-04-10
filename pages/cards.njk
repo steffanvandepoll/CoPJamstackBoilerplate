@@ -1,0 +1,26 @@
+---
+layout: layout/main.njk
+
+pagination:
+    data: contentful
+    size: 1
+    alias: card
+title: Welcome to Jamstack!
+subtitle: Static Site Generator x Contentful Demo
+---
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card">
+                <img src="{{ card.fields.gifUrl }}" class="card-img-top" alt="Some gif">
+                <div class="card-body">
+                    <h5 class="card-title">{{ card.fields.title }}</h5>
+                    <p class="card-text">
+                        {{ card.fields.description.content[0].content[0].value }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@ let nunjucks = require('nunjucks');
 let njIncludeData = require('nunjucks-includeData');
 
 module.exports = function(config) {
-  config.addPassthroughCopy('src/styles');
+  config.addPassthroughCopy('src/css');
 
   let njEnv = nunjucks.configure('src/templates');
   njIncludeData.install(njEnv);
@@ -10,9 +10,10 @@ module.exports = function(config) {
 
   return {
     dir: {
-      input: 'src',
+      input: 'pages',
       output: 'dist',
-      includes: 'templates'
+      includes: '../src/templates',
+      data: '../data'
     },
     passthroughFileCopy: true
   };

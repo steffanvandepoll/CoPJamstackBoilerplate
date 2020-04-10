@@ -1,0 +1,52 @@
+---
+layout: layout/main.njk
+
+title: Welcome to Jamstack!
+subtitle: Static Site Generator Demo
+cardTitle: I am generated! 🤖
+---
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-4">
+        <div class="jumbotron">
+            <h1>Good job! 🎈</h1>
+            <p>U just made your computer statically generate this page, whoopdeedoo! But ofcourse we want more, instead of statically generating static data...</p>
+            <hr>
+            <p>Seems like it's time to link it up with Contentful. The following steps will help you do so!</p>
+        </div>
+        <div class="jumbotron">
+            <h1>Does it work? 😰</h1>
+            <p>If you followed all steps on the right, it's time to see if your dynamic content got loaded as anticipated. Click the button below! <span class="text-muted">(hint: additional pages can be found by adding an integer behind the URL, like so: <a href="/cards/1/">click here!</a>)</span></p>
+            <hr>
+            <a href="/cards/" type="button" class="btn btn-primary btn-lg btn-block">Check it out!</a>
+            <hr>
+            <p>If you see your GIF & text, it's working: <strong>Congrats!</strong> 🥳</p>
+            <p>If you don't see your GIF and text, stay strong! head over to your Contentful webhook logs to see if its fired correctly, and if so, head over to Netlify to see if the Build hook triggered a new build. Additional logging should be there to help you on your way.</p>
+            
+        </div>
+    </div>
+    <div class="col-12 col-md-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Steps to linking it up with Contentful</h5>
+                <p class="card-text">
+                    Contentful offers two free spaces with up to 5000 records<br/>
+                    more then enough for this exercise.
+                </p>
+            </div>
+            <ol class="list-group list-group-flush">
+                <li class="list-group-item">1. Register/login into <a href="https://www.contentful.com/">Contentful</a> and create or re-use a space.</a></li>
+                <li class="list-group-item">2. In <span class="badge badge-secondary">Content model</span>, add a content type called 'card' with a short text 'Title' (being the entry title), rich text 'Description' and short text 'Gif URL'.</li>
+                <li class="list-group-item">3. In <span class="badge badge-secondary">Content</span>, add some 'card' entries, fill them with some mock content.<br/><span class="text-muted">(hint: <a href="https://giphy.com/">Giphy</a> has a lot of GIFs!)</span></li>
+                <li class="list-group-item">4. Head over to <span class="badge badge-secondary">Settings > API keys > Example key</span> and copy your <span class="badge badge-primary">Space ID</span> and <span class="badge badge-primary">Content Delivery API access token</span> into <span class="badge badge-info">/src/scripts/sourceData.js</span>, line 8 & 9.</li>
+                <li class="list-group-item">5. A local <span class="badge badge-warning">npm run data</span> will now retrieve the data from Contentful, and <span class="badge badge-warning">npm run build</span>, incorporates both 11ty as gathering the data, will make it a working package!</li>
+                <li class="list-group-item">6. To make it work only, go to <a href="https://app.netlify.com/">Netlify</a> and head over to <span class="badge badge-secondary">Site settings > Build & Deploy > Continuous Deployment</span> and change the publish directory from <span class="badge badge-info">demo</span> to <span class="badge badge-info">dist</span>. Also add <span class="badge badge-warning">npm run build</span> as the build command.</li>
+                <li class="list-group-item">7. While there, scroll down to <span class="badge badge-secondary">Build hooks</span>, add one, give it a name you like and keep the branch on 'master'. Save it and copy the <span class="badge badge-primary">Build hook URL</span>.</li>
+                <li class="list-group-item">8. Now we head back to <a href="https://www.contentful.com/">Contentful</a> and navigate to <span class="badge badge-secondary">Settings > Webhooks</span>. Press on the 'Add webhook' button on the right top.</li>
+                <li class="list-group-item">9. In the next screen, name the webhook whatever you'd like and paste the copied <span class="badge badge-primary">Build hook URL</span> from Netlify behind the 'Post' dropdown.</li>
+                <li class="list-group-item">10. At last, select the 'specific triggering events' radio button and check the 'content type' 'publish' and 'unpublish' checkboxes, save afterwards.</li>
+                <li class="list-group-item">11. All should be working now! 🏁  Whenever you publish a 'card' in Contentful, this should trigger a new build with therefore new data on Netlify!</li>
+            </ol>
+        </div>
+    </div>
+</div>
