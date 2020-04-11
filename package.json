@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Boilerplate for Jamstack code (Netlify, 11ty & Contentful) for the Webapps community of practice",
   "scripts": {
-    "build": "node src/scripts/sourceData && npx eleventy",
+    "build": "npm run data && npx eleventy",
     "eleventy": "npx eleventy --serve",
     "data": "node src/scripts/sourceData"
   },
